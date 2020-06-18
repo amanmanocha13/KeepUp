@@ -1,0 +1,67 @@
+<link rel="stylesheet" type="text/css" href="/css/lists_style.css">
+<div id="form-popup">
+    <i id="close-popup" class="fas fa-window-close" onclick="closeForm()" ></i>
+    <h1>Add Category</h1>
+<form id="category-form" method="post" action="/category/create">
+    <input type="text" placeholder="Category name" name="category">
+    <button type="submit" id="submit-category">Add Category</button>
+    <button type="button" id="close-popup-btn" onclick="closeForm()">Close</button>
+</form>
+</div>
+<div id="buttons-div">
+<div id="add-category-btn" onclick="openForm()"><i class="fas fa-plus-circle"></i><span>Add Category</span></div>
+<div id="add-list-btn" onclick="location.href='/lists/add'"><i class="fas fa-plus-circle"></i><span>Add List</span></div>
+</div>
+<div id="main-container">
+                   
+            <div id="list-container">
+                <% if(locals.lists.length == 0){ %>
+                        <h2>No Lists created. Click on add Lists to create lists.</h2>
+                    <% } %>
+                    <% for(list of lists){ %>   
+                    
+                        <div class="list" id="list-<%= list._id %>">
+                            <div class="dropdown">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                    <div class="dropdown-content">
+                                                <a href="/lists/edit/<%= list._id %>">Edit</a>
+                                                <a href="/lists/delete/<%= list._id %>">Delete</a>
+                                    </div>
+                            </div>
+                            <h1><%= list.title %></h1>
+                            <span class="category"><%= list.category %></span>
+                            <span class="due-date">Due-Date : <%= list.dueDate.toDateString() %></span>
+                            <h4>Uncompleted tasks : </h4>
+                            <ul class="uncompleted-task" id="uncompleted-list-<%= list._id %>">
+                            <% for(task of list.tasks){ %>
+                                <% if(task.completed == false){ %>
+                                    
+                                <li id="list-<%= list._id %>-task-<%= task._id %>">
+                                    <input type="checkbox" value="<%= task.content %>" list="<%= list._id %>" id="task-<%= task._id %>" name="<%= task._id %>">
+                                    <%= task.content %>
+                                </li>
+                                
+                                <% } %>
+                            
+                            <% } %>
+                                </ul>
+                            <div style='width:100%;border:1px solid black;height: 0;'></div>
+                            <h4>Completed tasks : </h4>
+                            <ul class="completed-task" id="completed-list-<%= list._id %>">
+                            <% for(task of list.tasks){ %>
+                                <% if(task.completed == true){ %>
+                                <li id="list-<%= list._id %>-task-<%= task._id %>">
+                                        <input type="checkbox" value="<%= task.content %>" list="<%= list._id %>" id="task-<%= task._id %>" name="<%= task._id %>" checked>
+                                    <%= task.content %>
+                                </li>
+                                
+                                <% } %>
+                            
+                            <% } %>
+                                </ul>
+                        </div>
+                   <% } %>
+               
+            </div>
+</div>
+<script src="/js/lists_script.js"></script>

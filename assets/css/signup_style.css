@@ -1,0 +1,76 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#info-div{
+    margin: auto;
+    width: 70%;
+}
+#info-div p{
+    font-size: 1rem;
+}
+#info-div #heading{
+    font-size: 2rem;
+}
+#social-btns{
+    height: 100px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+.social-media-btn{
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    text-align: center;
+}
+.social-media-btn:hover{
+    border: 2px solid grey;
+}
+#email-signup-div{
+    width: 70%; 
+    height: 70px;
+    text-align: center;
+}
+#email-signup-btn{
+    cursor: pointer;
+    margin: 15px 0px;   
+    width: 100%;
+    font-size: 1rem;
+    display: block;
+    border: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #00C4CC;
+    color: white;
+    outline: 0;
+}
+#email-signup-btn:hover{
+    background-color: #00D9E1;
+}
+.social-media-btn i{
+    position: absolute;
+    left: 5%;
+    font-size: 1.2rem;
+}
+
+#login-option-div{
+    width: 70%;
+    /* font-size: 1rem; */
+}
+#login-option-div a:visited{
+    color: #00C4CC;
+}
+#login-option-div a:link{
+    color: #00C4CC;
+}

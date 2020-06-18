@@ -1,0 +1,43 @@
+<link rel="stylesheet" type="text/css" href="/css/home_style.css">
+<script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '{your-app-id}',
+            cookie     : true,
+            xfbml      : true,
+            version    : '{api-version}'
+          });
+            
+          FB.AppEvents.logPageView();   
+            
+        };
+      
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "https://connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+      </script>
+      
+<main id="main-content">
+        <section id="authenticate-section">
+            <% if(locals.signIn){ %>
+                <%- include('_signin') -%>
+            <% }else if(locals.emailSignUp){ %>
+                <%- include('_emailSignUp') -%>
+            <% }else if(locals.forgotPass){ %>
+                <%- include('_forgotPass') -%>
+             <% }else if(locals.resetPass){ %>
+              <%- include('_resetPass') -%>
+             <% }else{ %>
+                <%- include('_signup') -%>
+            <% } %>
+        </section> 
+        <section id="info-section">
+          <h1>Create lists and add tasks on the go with Keep Up</h1>
+          <img src="/images/example.png"></img>
+        </section>   
+</main>
+<script type="text/javascript" src="/js/home_script.js"></script>

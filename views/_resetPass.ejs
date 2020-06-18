@@ -1,0 +1,18 @@
+<link rel="stylesheet" type="text/css" href="/css/resetPass_style.css">
+<div id="container">
+    <div id="info-div">
+            <h1 id="heading">Reset your Password</h1>
+            <p>Please set a new password for your account.</p>
+            <br>
+    </div>
+    <div id="update-pass-div">
+        <form method="post" action="/signin/reset/?accessToken=<%= locals.accessToken %>">
+            <label for="password">New password</label>
+        <input type="password" id="password" placeholder="New password" name="password" required>
+        <label for="confirmPassword">Confirm new password</label>
+        <input type="password" id="confirmPassword" placeholder="Confirm new password" name="confirmPassword" required>
+        <button type="submit" id="update-pass-btn">Set password</button>
+        </form>
+    </div>
+
+</div>

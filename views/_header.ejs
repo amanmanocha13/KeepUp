@@ -1,0 +1,13 @@
+<header>
+        <div id="logo-div">
+            <img id="logo" src="/images/logo.png" href="http://localhost:8000/">
+        </div>
+        <div id="authentication-btns-div">
+           <% if(locals.user){ %>
+                <button type="button" class="btn" id="signout-btn"><a href="/users/destroy-session">Sign Out</a></button>        
+           <% }else{ %>
+                <button type="button" class="btn" id="signin-btn">Log in</button>
+                <button type="button" class="btn" id="signup-btn">Sign up</button>
+            <% } %>
+    </div>
+    </header>

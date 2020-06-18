@@ -1,0 +1,77 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#info-div{
+    margin: auto;
+    width: 70%;
+}
+#info-div #heading{
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+#info-div #heading i{
+    font-size: 1rem;
+    color: black;
+}
+
+#email-signup-div{
+    width: 70%; 
+    height: auto;
+    text-align: center;
+}
+#email-signup-div form input{
+    border: 1px solid lightgrey;
+    display: block;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 15px 0px;
+    font-size: 1rem;
+    width: 100%; 
+    outline: 0;
+}
+#email-signup-btn{
+    margin: 15px 0px;   
+    width: 100%;
+    font-size: 1rem;
+    display: block;
+    border: 0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #00C4CC;
+    color: white;
+    outline: 0;
+}
+#email-signup-btn:hover{
+    background-color: #00D9E1;
+}
+#terms-of-use-div{
+    width: 70%;
+    height: 20px;
+    padding: 5px;
+}
+#terms-of-use-div a:visited{
+    color: black;
+}
+#terms-of-use-div a:link{
+    color: black;
+}
+#terms-of-use-div a:hover{
+    color: #00C4CC;
+}
+#login-option-div{
+    width: 70%;
+    margin-top: 20px;
+    padding: 5px;
+    /* font-size: 1rem; */
+}
+#login-option-div a:visited{
+    color: #00C4CC;
+}
+#login-option-div a:link{
+    color: #00C4CC;
+}

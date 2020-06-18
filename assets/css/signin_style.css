@@ -1,0 +1,115 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#info-div{
+    margin: auto;
+    width: 70%;
+}
+#info-div #heading{
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+#info-div #heading i{
+    font-size: 1rem;
+    color: black;
+}
+#social-btns{
+    height: 100px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+.social-media-btn{
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    text-align: center;
+}
+.social-media-btn:hover{
+    border: 2px solid grey;
+}
+#seperator{
+    margin: 10px 0px;
+    height: 20px;
+    text-align: center;
+    width: 70%;
+}
+#email-login-div{
+    width: 70%; 
+    height: auto;
+    text-align: center;
+}
+#email-login-div form input{
+    border: 1px solid lightgrey;
+    display: block;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 15px 0px;
+    font-size: 1rem;
+    width: 100%; 
+    outline: 0;
+}
+#email-login-btn{
+    cursor: pointer;
+    margin: 15px 0px;   
+    width: 100%;
+    font-size: 1rem;
+    display: block;
+    border: 0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #00C4CC;
+    color: white;
+    outline: 0;
+}
+#email-login-btn:hover{
+    background-color: #00D9E1;
+}
+.social-media-btn i{
+    position: absolute;
+    left: 5%;
+    font-size: 1.2rem;
+}
+#forgot-pass-div{
+    width: 70%;
+    height: 20px;
+    padding: 5px;
+}
+#forgot-pass-div a{
+    color: black;
+}
+#forgot-pass-div a:hover{
+    color: #00D9E1;
+}
+#signup-option-div a:visited{
+    color: black;
+}
+#signup-option-div a:link{
+    color: black;
+}
+#signup-option-div a:hover{
+    color: #00C4CC;
+}
+#signup-option-div{
+    width: 70%;
+    height: 20px;
+    padding: 5px;
+    /* font-size: 1rem; */
+}
+#signup-option-div a:visited{
+    color: #00C4CC;
+}
+#signup-option-div a:link{
+    color: #00C4CC;
+}

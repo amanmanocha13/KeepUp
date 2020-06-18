@@ -1,0 +1,31 @@
+<link rel="stylesheet" type="text/css" href="/css/editList_style.css">
+<div id="back-div" onclick="location.href='/lists'"><i class="fas fa-arrow-left"></i><span>Back</span></div>
+<div id="main-container">
+        
+        <h1>Update List</h1>
+        <form method="post" action="/lists/update/<%= list._id %>">
+            <input type="text" id="title" name="title" placeholder="Title" value="<%= locals.list.title %>" required><br>
+            <select id="category" name="category" required>
+                <option selected disabled><%= locals.list.category %></option>
+            </select><br>
+            <label for="dueDate">Due Date : </label><input type="date" value="<%= locals.dueDate %>" name="dueDate" id="dueDate" required>
+            <h2>Tasks : </h2>
+            <ol id="task-input-div">
+                <% for(task of list.tasks){ %>
+            <li id="list-<%= list._id %>-task-<%= task._id %>">    
+                <% if(task.completed){ %>
+                    <input type="checkbox" value="<%= task.content %>" list="<%= list._id %>" id="task-<%= task._id %>" name="<%= task._id %>" 
+                    checked >
+                    <% }else{ %>    
+                        <input type="checkbox" value="<%= task.content %>" list="<%= list._id %>" id="task-<%= task._id %>" name="<%= task._id %>" >
+                        <% } %>
+                <input type="text" disabled class="tasks" name="initial-tasks" value="<%= task.content %>" required>
+                <i class="fas fa-window-close pointer" id="deleteList-<%= list._id %>-task-<%= task._id %>"></i>
+            </li>
+                <% } %>
+        </ol>
+            <div id="add-task-btn"><i class="fas fa-plus-circle"></i><span>Add task</span></div>
+            <button type="submit" id="submit-btn">Update List</button>
+        </form>
+    </div>
+<script src="/js/editList_script.js"></script>

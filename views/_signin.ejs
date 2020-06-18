@@ -1,0 +1,36 @@
+<link rel="stylesheet" type="text/css" href="/css/signin_style.css">
+<div id="container">
+    <div id="info-div">
+            <h1 id="heading"><span><a  class="signup-btn" href="#"><i class="fas fa-chevron-left signup-btn"></i></a></span> Log in to your account</h1>
+    </div>
+    <div id="social-btns">
+        <div class="social-media-btn" onclick="location.href='/users/auth/google'">
+            <i class="fab fa-google google"></i>
+            <span>Log in with Google</span>
+        </div>
+        <div class="social-media-btn"  onclick="location.href='/users/auth/facebook'">
+            <i class="fab fa-facebook-square fb"></i>
+            <span>Log in with Facebook</span>
+        </div>
+    </div>
+    <div id="seperator">
+        ----------------------or--------------------------
+    </div>
+    <div id="email-login-div">
+        <form method="post" action="/users/create-session">
+        <input type="email" placeholder="Email" name="email" required>
+        <input type="password" placeholder="Password" name="password" required>
+        <button type="submit" id="email-login-btn">Log in</button>
+        </form>
+    </div>
+    <div id="forgot-pass-div">
+            <span><a href="#" id="forgot-pass-link">Forgot password?</a></span>
+    </div>
+    <div id="signup-option-div">
+        <span>New to Keep Up?<a class="signup-btn" href="">Sign Up</a></span>
+    </div>
+    <div>
+
+    </div>
+
+</div>

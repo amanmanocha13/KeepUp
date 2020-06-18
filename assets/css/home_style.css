@@ -1,0 +1,28 @@
+main{
+    display: flex;
+    justify-content: space-around;
+}
+#authenticate-section{
+    width: 30%;
+    height: auto;
+}
+#info-section{
+    width: 60%;
+    height: auto;
+    text-align: center;
+}
+#info-section h1{
+    font-size: 2rem;
+    /* letter-spacing: 0.1rem; */
+}
+#info-section img{
+    width: 90%;
+    margin: 20px;
+}
+
+.fb{
+    color: #3C5A98;
+}
+.google{
+    color: #4285F4;
+}

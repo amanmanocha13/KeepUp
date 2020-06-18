@@ -1,0 +1,54 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#info-div{
+    margin: auto;
+    width: 70%;
+}
+#info-div #heading{
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+#info-div p{
+    font-size: 1rem;
+}
+
+#update-pass-div{
+    width: 70%; 
+    height: auto;
+    /* text-align: center; */
+}
+#update-pass-div form input{
+    border: 1px solid lightgrey;
+    display: block;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 15px 0px;
+    font-size: 1rem;
+    width: 100%; 
+    outline: 0;
+}
+#update-pass-div label{
+    font-weight: bold;
+}
+#update-pass-btn{
+    cursor: pointer;
+    margin: 15px 0px;   
+    width: 100%;
+    font-size: 1rem;
+    display: block;
+    border: 0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #00C4CC;
+    color: white;
+    outline: 0;
+}
+#update-pass-btn:hover{
+    background-color: #00D9E1;
+}

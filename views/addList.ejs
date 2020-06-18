@@ -1,0 +1,26 @@
+<link rel="stylesheet" type="text/css" href="/css/addList_style.css">
+<div id="back-div" onclick="location.href='/lists'"><i class="fas fa-arrow-left"></i><span>Back</span></div>
+<div id="main-container">
+        
+        <h1>Add List</h1>
+        <form method="post" action="/lists/create">
+            <input type="text" id="title" name="title" placeholder="Title" required><br>
+            <select id="category" name="category" required>
+                <option selected disabled>Choose a Category</option>
+                <% if(locals.categories){ %>
+                    <% for(category of categories){ %>
+                        <option value="<%= category.content %>"><%= category.content %></option>
+                    <% } %>
+                <% } %>
+                <option value="none">None</option>
+            </select><br>
+            <label for="dueDate">Due Date : </label><input type="date" name="dueDate" id="dueDate" required>
+            <h2>Tasks : </h2>
+            <ol id="task-input-div">
+            <li><input type="text" class="tasks" name="tasks" placeholder="What do you need to do?" required></li>
+            </ol>
+            <div id="add-task-btn"><i class="fas fa-plus-circle"></i><span>Add task</span></div>
+            <button type="submit" id="submit-btn">Add List</button>
+        </form>
+    </div>
+<script src="/js/addList_script.js"></script>
