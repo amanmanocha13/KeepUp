@@ -21,7 +21,7 @@ function(accessToken,refreshToken,profile,done){
         }else{
             User.create({   //creating user if user does not exist in our local db
                 name: profile.displayName,
-                email: profile.emails.value[0],
+                email: profile.emails[0].value,
                 password: crypto.randomBytes(20).toString('hex')
             },function(err,user){
                 if(err){
