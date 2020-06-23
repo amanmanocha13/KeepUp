@@ -7,7 +7,7 @@ const env = require('./environment');
 passport.use(new googleStrategy({
     clientID: env.google_clientID,
     clientSecret: env.google_clientSecret,
-    callbackURL: 'http://localhost:8000/users/auth/google/callback'    
+    callbackURL: 'https://keep-up-todo-app.herokuapp.com/users/auth/google/callback'    
 },
 function(accessToken,refreshToken,profile,done){
     User.findOne({email: profile.emails[0].value}).exec(function(err,user){

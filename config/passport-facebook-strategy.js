@@ -7,7 +7,7 @@ const env = require('./environment');
 passport.use(new facebookStrategy({
     clientID: env.facebook_clientID,
     clientSecret: env.facebook_clientSecret,
-    callbackURL: "http://localhost:8000/users/auth/facebook/callback",
+    callbackURL: "https://keep-up-todo-app.herokuapp.com/users/auth/facebook/callback",
     profileFields: ['id', 'displayName', 'email', 'birthday'] //fields which we want as data from fb
 },
 function(accessToken,refreshToken,profile,done){
