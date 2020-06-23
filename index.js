@@ -1,5 +1,5 @@
 const express = require('express');
-const port = 8000;
+const port = process.env.PORT || 8000;
 const app = express();
 const db = require('./config/mongoose');  
 const expressLayouts = require('express-ejs-layouts');
@@ -12,6 +12,7 @@ const passportFacebookStrategy = require('./config/passport-facebook-strategy');
 const MongoStore = require('connect-mongo')(session);   //monog store to store session detail in db
 const flash = require('connect-flash');   //flash for notifications
 const customMware = require('./config/middleware');  //middleware to set res.flash
+const env = require('./config/environment');
 
 app.set('view engine','ejs');
 app.set('views','./views');
@@ -21,11 +22,11 @@ app.set('layout extractStyles',true);
 app.use(express.urlencoded());
 app.use(cookieParser());
 
-app.use(express.static('./assets')); //for static files
+app.use(express.static(process.env.asset_path)); //for static files
 
 app.use(session({
     name: 'KeepUp',
-    secret: 'secretKey',
+    secret: env.session_cookie_key,
     saveUninitialized: false,
     resave: false,
     cookie: {
