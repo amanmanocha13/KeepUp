@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const env = require('./environment');
 //connecting to mongodb with db name as KeepUp
-mongoose.connect("mongodb://localhost/KeepUp");
+mongoose.connect(`mongodb://localhost/K${env.db_name}`);
 
 const db = mongoose.connection;
 

@@ -38,7 +38,6 @@ $("input[type='checkbox']").on('click',function(){
 
    //to delete task if user clicks on delete button
    $('.pointer').on('click',function(){
-       alert('clicked');
        var arr = $(this).attr('id').split('-');
         console.log(arr);
     var listId = arr[1];

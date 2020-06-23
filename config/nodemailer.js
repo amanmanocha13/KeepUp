@@ -2,6 +2,7 @@
 const nodemailer = require('nodemailer');
 const ejs  = require('ejs');
 const path = require('path');
+const env = require('./environment');
 
 //creating transporter to send mail
 let transporter  = nodemailer.createTransport({
@@ -10,8 +11,8 @@ let transporter  = nodemailer.createTransport({
     port: 587,
     secure: false,
     auth: {
-        user: '', //TODO: enter email id
-        pass: '' //TODO: enter email password
+        user: env.email_id, //TODO: enter email id
+        pass: env.email_pass //TODO: enter email password
     }
 });
 

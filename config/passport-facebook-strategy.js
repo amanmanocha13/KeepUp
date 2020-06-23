@@ -2,10 +2,11 @@ const passport = require('passport');
 const facebookStrategy = require('passport-facebook').Strategy;
 const User = require('../models/user'); 
 const crypto = require('crypto');
+const env = require('./environment');
 
 passport.use(new facebookStrategy({
-    clientID: '470041470260488',
-    clientSecret: 'd1e986a2d7df92965610110455b2fe39',
+    clientID: env.facebook_clientID,
+    clientSecret: env.facebook_clientSecret,
     callbackURL: "http://localhost:8000/users/auth/facebook/callback",
     profileFields: ['id', 'displayName', 'email', 'birthday'] //fields which we want as data from fb
 },
