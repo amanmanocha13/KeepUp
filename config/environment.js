@@ -13,7 +13,7 @@ const development = {
 }
 const production = {
     name : "production",
-    session_cookie_key: 'TEzySi8laq7r9AhUYls4hllegiTDHEIU',
+    session_cookie_key: process.env.SESSION_COOKIE_KEY,
     asset_path: './public/assets',
     db_name: process.env.DB,
     db_password: process.env.DB_PASS,
